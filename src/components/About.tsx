@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone, FaCertificate, FaLanguage, FaCode, FaLaptopCode, FaServer, FaCloud, FaLightbulb, FaSmile, FaGlobe, FaTrophy, FaGamepad, FaTachometerAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone, FaCertificate, FaLanguage, FaCode, FaServer, FaGamepad, FaTachometerAlt } from 'react-icons/fa';
 import { SiNodedotjs, SiExpress, SiFastapi, SiPhp, SiSequelize, SiMongodb, SiPrisma, SiSocketdotio, SiJquery, SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiBootstrap, SiExpo, SiRedux, SiDocker, SiGithubactions, SiGit, SiAmazonaws, SiFirebase, SiSupabase, SiJest, SiMocha, SiChai, SiPostman } from 'react-icons/si';
 import { DiMysql, DiPostgresql } from 'react-icons/di';
 import { TbBrandGraphql } from 'react-icons/tb';
@@ -229,7 +229,6 @@ const About = () => {
             <SocialIcon href="https://www.linkedin.com/in/talel-zamouri-a75b27362/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></SocialIcon>
           </ProfileSocial>
           <ProfileLocation><FaMapMarkerAlt /> Mohamed Ali St., Rades, Tunisia</ProfileLocation>
-          <ResumeButton href="/Talel_Zamouri_CV.pdf" download>Download Resume</ResumeButton>
         </Profile>
         <Content>
           <SectionTitle
@@ -331,7 +330,7 @@ const About = () => {
           <SubSection>
             <SubTitle><FaCertificate /> Certifications</SubTitle>
             <BadgeList>
-              <Badge>Bootcamp - Full Stack JavaScript Web Development (Sep 2024 – Mar 2025)</Badge>
+              <Badge href="https://credsverse.com/credentials/9b93a8d8-8e30-4de4-8fcd-4e7c899dfbb5?preview=1" target="_blank" rel="noopener noreferrer">Bootcamp - Full Stack JavaScript Web Development (Sep 2024 – Mar 2025)</Badge>
             </BadgeList>
           </SubSection>
         </Content>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGithub, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const ProjectsSection = styled.section`
   min-height: 100vh;
@@ -158,7 +158,7 @@ const Projects = () => {
         'Integrated secure payment processing for users in Tunisia, utilizing modern security protocols.'
       ],
       github: 'https://github.com/thesis-rbk/Wassalha',
-      date: 'Jan 2025 – Present'
+      date: 'Mars 2025 – Present'
     },
     {
       title: 'DishDash',
@@ -180,7 +180,7 @@ const Projects = () => {
         'Created a robust backend system handling game file processing, ZIP extraction, and npm package management.'
       ],
       github: 'https://github.com/rbk-game-zone/game-zone',
-      date: 'Feb 2020 – Jan 2021'
+      date: 'Jan 2025 – Feb 2025'
     },
     {
       title: 'Mushroom Kingdom',
@@ -190,8 +190,8 @@ const Projects = () => {
         'Modernized legacy codebase by updating deprecated dependencies and implementing modern game development practices.',
         'Implemented multiplayer networking, 3D character controls, and interactive game environments.'
       ],
-      github: 'https://github.com/your-username/mushroom-kingdom',
-      date: 'Jan 2019 – Dec 2019'
+      github: 'https://github.com/talel-c95/game',
+      date: 'Feb 2025 – Mar 2025'
     }
   ];
   const totalProjects = projects.length;

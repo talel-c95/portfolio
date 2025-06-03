@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar } from 'recharts';
-import { TrendingUp, TrendingDown, DollarSign, BarChart3, Activity, Target, Shield, Zap, Globe, Brain, Clock, Award, Star, Filter, Search, Eye, ChevronDown, ChevronUp } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { TrendingUp, DollarSign, BarChart3, Activity, Target, Shield, Zap, Globe, Brain, Clock, Award, Star, Search, ChevronDown, ChevronUp } from 'lucide-react';
 import './TraderPortfolio.css';
 
 // Import images

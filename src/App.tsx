@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ChoosePath from './components/ChoosePath';
 import TraderPortfolioConcept from './components/TraderPortfolioConcept';
+import TechLogoMarquee from './components/TechLogoMarquee';
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -398,6 +399,8 @@ function App() {
             </SocialLinks>
             
           </Hero>
+
+          <TechLogoMarquee />
 
           <About />
           <Projects />
