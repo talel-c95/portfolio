@@ -17,7 +17,7 @@ const AppContainer = styled.div`
 `;
 
 const Header = styled.header`
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,11 +30,115 @@ const Header = styled.header`
   z-index: 1000;
   background: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(10px);
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const MobileMenuButton = styled.button`
+  display: none;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 1002;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: scale(1.05);
+  }
+`;
+
+const MobileNav = styled(motion.nav)`
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1001;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+const MobileNavLink = styled(motion.a)`
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #64ffda;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 80%;
+  }
+`;
+
+const CloseButton = styled(motion.button)`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 1002;
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: scale(1.05);
+  }
 `;
 
 const NavLink = styled(motion.a)`
@@ -70,6 +174,10 @@ const Hero = styled.section`
   background: linear-gradient(120deg, #1a1a1a 60%, #00b4d8 100%);
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 const HeroAvatar = styled.div`
@@ -86,6 +194,12 @@ const HeroAvatar = styled.div`
   margin-bottom: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+  }
 `;
 
 const AnimatedTagline = styled(motion.div)`
@@ -107,6 +221,12 @@ const DownloadButton = styled.a`
   margin-top: 1.2rem;
   box-shadow: 0 2px 12px 0 rgba(100,255,218,0.10);
   transition: background 0.3s, color 0.3s, transform 0.2s;
+
+  @media (max-width: 768px) {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+
   &:hover {
     background: linear-gradient(90deg, #00b4d8 60%, #64ffda 100%);
     color: #fff;
@@ -141,6 +261,10 @@ const Name = styled(motion.h1)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Title = styled(motion.h2)`
@@ -148,6 +272,10 @@ const Title = styled(motion.h2)`
   color: #ffffff;
   margin-bottom: 1.5rem;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ContactInfo = styled(motion.div)`
@@ -160,12 +288,20 @@ const SocialLinks = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 const SocialIcon = styled(motion.a)`
   color: #ffffff;
   font-size: 1.5rem;
   transition: color 0.3s ease;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
   
   &:hover {
     color: #64ffda;
@@ -268,6 +404,7 @@ function useTypewriter(words: string[], speed = 60, pause = 1200) {
 
 function App() {
   const [selectedPath, setSelectedPath] = useState<'none' | 'webdev' | 'trading'>('none');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const typewriterText = useTypewriter([
     'Building scalable, beautiful web apps.',
@@ -284,6 +421,10 @@ function App() {
     setSelectedPath('none');
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <AppContainer>
       <BackButton
@@ -296,42 +437,71 @@ function App() {
         <FaChevronLeft />
       </BackButton>
 
+      {selectedPath !== 'none' && (
+        <Header>
+          <Logo>
+            <span className="icon">👨‍💻</span>
+            <span className="brand">Portfolio</span>
+          </Logo>
+          <Nav>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
+          </Nav>
+          <MobileMenuButton onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+            {isMobileMenuOpen ? '✕' : '☰'}
+          </MobileMenuButton>
+        </Header>
+      )}
+
+      {selectedPath !== 'none' && (
+        <MobileNav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: isMobileMenuOpen ? 1 : 0, y: isMobileMenuOpen ? 0 : -20 }}
+          transition={{ duration: 0.3 }}
+          style={{ display: isMobileMenuOpen ? 'flex' : 'none' }}
+        >
+          <CloseButton
+            onClick={toggleMobileMenu}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Close mobile menu"
+          >
+            ✕
+          </CloseButton>
+          <MobileNavLink 
+            href="#about" 
+            onClick={toggleMobileMenu}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            About
+          </MobileNavLink>
+          <MobileNavLink 
+            href="#projects" 
+            onClick={toggleMobileMenu}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Projects
+          </MobileNavLink>
+          <MobileNavLink 
+            href="#contact" 
+            onClick={toggleMobileMenu}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contact
+          </MobileNavLink>
+        </MobileNav>
+      )}
+
       {selectedPath === 'none' && (
         <ChoosePath onPathSelect={handlePathSelection} />
       )}
 
       {selectedPath === 'webdev' && (
         <>
-          <Header>
-            <Logo>
-              <span className="icon">⚡</span>
-              <span className="brand">Talel Zamouri</span>
-            </Logo>
-            <Nav>
-              <NavLink
-                href="#about"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                About
-              </NavLink>
-              <NavLink
-                href="#projects"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Projects
-              </NavLink>
-              <NavLink
-                href="#contact"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact
-              </NavLink>
-            </Nav>
-          </Header>
-          
           <Hero style={{position:'relative', overflow:'hidden'}}>
             <FloatingShapes>
               <svg width="100" height="100"><circle cx="50" cy="50" r="50" fill="#64ffda" /></svg>

@@ -9,6 +9,10 @@ const ContactSection = styled.section`
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -28,6 +32,11 @@ const ContactInfo = styled.div`
     color: #64ffda;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   p {
@@ -35,6 +44,12 @@ const ContactInfo = styled.div`
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
   }
 `;
 
@@ -42,6 +57,10 @@ const ContactDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+  }
 `;
 
 const ContactItem = styled(motion.div)`
@@ -50,9 +69,18 @@ const ContactItem = styled(motion.div)`
   gap: 1rem;
   color: #ffffff;
 
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+
   svg {
     color: #64ffda;
     font-size: 1.25rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 
@@ -60,17 +88,29 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+  }
 `;
 
 const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+  }
 `;
 
 const Label = styled.label`
   color: #ffffff;
   font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const Input = styled.input`
@@ -81,6 +121,11 @@ const Input = styled.input`
   color: #ffffff;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
 
   &:focus {
     outline: none;
@@ -99,6 +144,12 @@ const TextArea = styled.textarea`
   resize: vertical;
   transition: border-color 0.3s ease;
 
+  @media (max-width: 768px) {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+    min-height: 120px;
+  }
+
   &:focus {
     outline: none;
     border-color: #64ffda;
@@ -115,6 +166,12 @@ const SubmitButton = styled(motion.button)`
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
 
   &:hover {
     background: rgba(100, 255, 218, 0.1);

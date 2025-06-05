@@ -2,6 +2,8 @@
 
 html, body, #root {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -61,4 +63,21 @@ a {
   color: inherit;
   text-decoration: none;
   transition: color 0.2s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    background-size: 300% 300%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
 }

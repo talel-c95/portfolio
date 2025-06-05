@@ -8,12 +8,20 @@ const ProjectsSection = styled.section`
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+  }
 `;
 
 const ProjectsGridWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 const ProjectsGrid = styled(motion.div)`
@@ -22,8 +30,15 @@ const ProjectsGrid = styled(motion.div)`
   gap: 2rem;
   margin-top: 3rem;
   width: 100%;
-  @media (max-width: 1000px) {
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 `;
 
@@ -33,6 +48,13 @@ const ProjectCard = styled(motion.div)`
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+
+  @media (max-width: 768px) {
+    &:hover {
+      transform: none;
+    }
+  }
+
   &:hover {
     transform: scale(1.03) translateY(-8px);
     box-shadow: 0 6px 24px rgba(100,255,218,0.10);
@@ -46,6 +68,10 @@ const ProjectImage = styled.div`
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    height: 180px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -56,10 +82,19 @@ const ProjectImage = styled.div`
 const ProjectContent = styled.div`
   padding: 1.5rem;
 
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+
   h3 {
     color: #ffffff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
   }
 
   p {
@@ -67,6 +102,12 @@ const ProjectContent = styled.div`
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
   }
 `;
 
@@ -75,6 +116,11 @@ const TechStack = styled.div`
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const Tech = styled.span`
@@ -83,17 +129,30 @@ const Tech = styled.span`
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.875rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
 `;
 
 const ProjectLinks = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+  }
 `;
 
 const ProjectLink = styled(motion.a)`
   color: #ffffff;
   font-size: 1.25rem;
   transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 
   &:hover {
     color: #64ffda;
@@ -116,6 +175,12 @@ const NavButton = styled(motion.button)`
   top: 50%;
   transform: translateY(-50%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  @media (max-width: 768px) {
+    padding: 0.6rem 1rem;
+    font-size: 1.5rem;
+  }
+
   &:hover {
     background: #64ffda;
     color: #222;
@@ -124,9 +189,18 @@ const NavButton = styled(motion.button)`
 
 const PrevButton = styled(NavButton)`
   left: -3.5rem;
+
+  @media (max-width: 768px) {
+    left: -2.5rem;
+  }
 `;
+
 const NextButton = styled(NavButton)`
   right: -3.5rem;
+
+  @media (max-width: 768px) {
+    right: -2.5rem;
+  }
 `;
 
 const Dots = styled.div`
@@ -134,6 +208,10 @@ const Dots = styled.div`
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+  }
 `;
 const Dot = styled.button<{ $active: boolean }>`
   width: 10px;

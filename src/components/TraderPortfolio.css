@@ -38,6 +38,16 @@
   opacity: 0.4;
   filter: blur(15px);
   animation: floatImage 60s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .bitcoin-logo {
@@ -84,6 +94,14 @@
   z-index: 1;
   padding: 100px 20px 80px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 80px 15px 60px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 60px 10px 40px;
+  }
 }
 
 .hero-content-container {
@@ -99,12 +117,28 @@
   font-weight: 800;
   color: #ffcc00;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   color: #94a3b8;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 }
 
 .hero-tagline {
@@ -113,6 +147,16 @@
   max-width: 800px;
   margin: 0 auto 3rem;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Live Stats Grid */
@@ -122,6 +166,15 @@
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stat-card {
@@ -132,6 +185,14 @@
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 .stat-card:hover {
@@ -175,6 +236,14 @@
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 40px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 10px;
+  }
 }
 
 .performance-heading {
@@ -188,6 +257,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .chart-container {
@@ -211,6 +285,14 @@
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 40px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 10px;
+  }
 }
 
 .systems-heading {
@@ -222,6 +304,10 @@
 
 .filter-search-container {
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .filter-search-inner {
@@ -234,6 +320,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+  }
 }
 
 .filter-button {
@@ -245,6 +335,11 @@
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
 }
 
 .filter-button:hover {
@@ -290,16 +385,35 @@
 
 .systems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .system-card {
-  background: rgba(255, 204, 0, 0.1);
+  background: rgba(30, 41, 59, 0.5);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 204, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
-  overflow: hidden;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 .card-content {
@@ -508,10 +622,18 @@
 .trader-footer {
   position: relative;
   z-index: 1;
-  padding: 60px 20px;
-  background: rgba(0, 0, 0, 0.8); /* Darker background */
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(71, 85, 105, 0.5); /* Darker border */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 10px;
+  }
 }
 
 .footer-content-wrapper {
@@ -522,9 +644,20 @@
 
 .footer-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted minmax for more items */
-  gap: 1.5rem; /* Adjusted gap */
-  margin-bottom: 2rem; /* Adjusted margin */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .footer-stat-item {
@@ -645,6 +778,14 @@
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 40px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 10px;
+  }
 }
 
 .my-ideas-heading {
@@ -657,17 +798,35 @@
 
 .my-ideas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .my-idea-card {
-  background: rgba(255, 204, 0, 0.1); /* Subtle yellow background */
+  background: rgba(30, 41, 59, 0.5);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 204, 0, 0.2); /* Subtle yellow border */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
-  overflow: hidden;
+  padding: 1.5rem;
   transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 }
 
 .my-idea-card:hover {

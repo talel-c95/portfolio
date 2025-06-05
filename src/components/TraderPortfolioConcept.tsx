@@ -154,11 +154,101 @@ const TraderPortfolio = () => {
         className="animated-background"
         style={{ y: backgroundY }}
       >
-        <motion.img src={bitcoinLogo} alt="Bitcoin Logo" className="animated-image bitcoin-logo" />
-        <motion.img src={ethereumLogo} alt="Ethereum Logo" className="animated-image ethereum-logo" />
-        <motion.img src={solanaLogo} alt="Solana Logo" className="animated-image solana-logo" />
-        <motion.img src={xrpLogo} alt="XRP Logo" className="animated-image xrp-logo" />
-        <motion.img src={shibaInuLogo} alt="Shiba Inu Logo" className="animated-image shiba-inu-logo" />
+        <motion.img 
+          src={bitcoinLogo} 
+          alt="Bitcoin Logo" 
+          className="animated-image bitcoin-logo"
+          style={{
+            width: '200px',
+            height: '200px'
+          }}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 180, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.img 
+          src={ethereumLogo} 
+          alt="Ethereum Logo" 
+          className="animated-image ethereum-logo"
+          style={{
+            width: '200px',
+            height: '200px'
+          }}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 180, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.img 
+          src={solanaLogo} 
+          alt="Solana Logo" 
+          className="animated-image solana-logo"
+          style={{
+            width: '200px',
+            height: '200px'
+          }}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 180, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.img 
+          src={xrpLogo} 
+          alt="XRP Logo" 
+          className="animated-image xrp-logo"
+          style={{
+            width: '200px',
+            height: '200px'
+          }}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 180, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.img 
+          src={shibaInuLogo} 
+          alt="Shiba Inu Logo" 
+          className="animated-image shiba-inu-logo"
+          style={{
+            width: '200px',
+            height: '200px'
+          }}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 180, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </motion.div>
 
       {/* Hero Section */}
@@ -176,17 +266,17 @@ const TraderPortfolio = () => {
         >
           <motion.h1 
             className="hero-title"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-        >
-          TALEL ZAMOURI
+          >
+            TALEL ZAMOURI
           </motion.h1>
           
           <motion.h2 
             className="hero-subtitle"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
             Quantitative Trading Specialist
@@ -194,8 +284,8 @@ const TraderPortfolio = () => {
           
           <motion.p 
             className="hero-tagline"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
             Advanced algorithmic trading systems across global markets • 53+ proprietary strategies • AI-powered portfolio optimization
@@ -204,8 +294,8 @@ const TraderPortfolio = () => {
           {/* Live Stats */}
           <motion.div 
             className="live-stats-grid"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
           >
             <div className="stat-card">
@@ -248,10 +338,11 @@ const TraderPortfolio = () => {
         <motion.h2 
           className="performance-heading"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Performance Analytics
+          Performance Dashboard
         </motion.h2>
         
         <div className="charts-grid">
@@ -327,61 +418,48 @@ const TraderPortfolio = () => {
         <motion.h2 
           className="systems-heading"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          53+ Trading Systems & Projects
+          Trading Systems
         </motion.h2>
 
-        {/* Filter and Search */}
-        <motion.div 
-          className="filter-search-container"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div className="filter-search-container">
           <div className="filter-search-inner">
             <div className="filter-buttons">
               {categories.map(category => (
                 <button
                   key={category}
-                  onClick={() => setActiveFilter(category)}
                   className={`filter-button ${activeFilter === category ? 'active' : ''}`}
+                  onClick={() => setActiveFilter(category)}
                 >
-                  {category.replace('_', ' ').toUpperCase()}
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>
               ))}
             </div>
-            
             <div className="search-input-container">
               <Search className="search-icon" />
               <input
                 type="text"
-                placeholder="Search strategies..."
+                placeholder="Search systems..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="search-input"
               />
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Systems Grid */}
-        <motion.div 
-          className="systems-grid"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div className="systems-grid">
           {filteredSystems.slice(0, visibleSystemsCount).map((system, index) => (
             <motion.div
               key={system.id}
               className="system-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
             >
               <div className="card-content">
                 <div className="card-header">
@@ -464,43 +542,41 @@ const TraderPortfolio = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {visibleSystemsCount < filteredSystems.length && (
-          <motion.button
-            className="show-more-button-container"
-            onClick={handleShowMore}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Show More Systems <ChevronDown />
-          </motion.button>
+          <div className="show-more-button-container">
+            <button
+              className="show-more-button"
+              onClick={handleShowMore}
+            >
+              Show More Systems
+            </button>
+          </div>
         )}
       </section>
 
-      {/* My Trading Ideas Section */}
+      {/* My Ideas Section */}
       <section className="my-ideas-section">
-        <motion.h2
+        <motion.h2 
           className="my-ideas-heading"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           My Trading Ideas
         </motion.h2>
 
         <div className="my-ideas-grid">
-          {myIdeas.map(idea => (
+          {myIdeas.map((idea, index) => (
             <motion.div
               key={idea.id}
               className="my-idea-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
-              transition={{ delay: idea.id * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
             >
               <div className="my-idea-card-content">
                 <h3 className="my-idea-title">{idea.title}</h3>
@@ -522,7 +598,7 @@ const TraderPortfolio = () => {
         <motion.h2 
           className="capabilities-heading"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           Core Capabilities
@@ -571,7 +647,7 @@ const TraderPortfolio = () => {
               key={index}
               className="capability-card"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -10 }}

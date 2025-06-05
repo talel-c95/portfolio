@@ -14,6 +14,10 @@ const AboutSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 6rem 1rem 2rem 1rem;
+  }
 `;
 
 const GlassCard = styled.div`
@@ -26,6 +30,10 @@ const GlassCard = styled.div`
   width: 100%;
   overflow: hidden;
   border: 1.5px solid rgba(100,255,218,0.12);
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const Profile = styled.div`
@@ -39,6 +47,13 @@ const Profile = styled.div`
   padding: 3rem 2rem 2rem 2rem;
   color: #fff;
   border-right: 1.5px solid rgba(100,255,218,0.12);
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1.5px solid rgba(100,255,218,0.12);
+    padding: 2rem 1rem;
+  }
 `;
 
 const AnimatedAvatarRing = styled.div`
@@ -46,6 +61,11 @@ const AnimatedAvatarRing = styled.div`
   width: 130px;
   height: 130px;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 const AvatarGlow = styled.div`
   position: absolute;
@@ -70,12 +90,21 @@ const AvatarImg = styled.img`
   border: 4px solid #232526;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 const ProfileName = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const ProfileTitle = styled.h3`
@@ -83,6 +112,10 @@ const ProfileTitle = styled.h3`
   font-weight: 400;
   color: #64ffda;
   margin-bottom: 1.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const ProfileContact = styled.div`
@@ -128,8 +161,13 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media (max-width: 900px) {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
   }
 `;
 
@@ -138,6 +176,11 @@ const SectionTitle = styled(motion.h2)`
   margin-bottom: 1.2rem;
   color: #64ffda;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Summary = styled(motion.p)`
@@ -146,6 +189,12 @@ const Summary = styled(motion.p)`
   line-height: 1.8;
   margin-bottom: 2.2rem;
   max-width: 700px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const SubSection = styled.div`
@@ -156,6 +205,10 @@ const SubTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const List = styled.ul`
@@ -171,6 +224,10 @@ const BadgeList = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 0.3rem;
+  }
 `;
 
 const Badge = styled.a`
@@ -185,6 +242,12 @@ const Badge = styled.a`
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
   text-decoration: none;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.4rem;
+  }
+
   &:hover {
     background: #64ffda;
     color: #232526;
@@ -202,6 +265,12 @@ const ResumeButton = styled.a`
   margin-top: 1.2rem;
   box-shadow: 0 2px 12px 0 rgba(100,255,218,0.10);
   transition: background 0.3s, color 0.3s, transform 0.2s;
+
+  @media (max-width: 768px) {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.95rem;
+  }
+
   &:hover {
     background: linear-gradient(90deg, #00b4d8 60%, #64ffda 100%);
     color: #fff;

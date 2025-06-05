@@ -20,11 +20,16 @@ const MarqueeContainer = styled.div`
   border-top: 1px solid rgba(100, 255, 218, 0.1);
   border-bottom: 1px solid rgba(100, 255, 218, 0.1);
   margin: 4rem 0;
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 0;
+    margin: 2rem 0;
+  }
 `;
 
 const MarqueeContent = styled(motion.div)`
   display: flex;
-  width: fit-content; /* Important for continuous scroll */
+  width: fit-content;
   align-items: center;
 `;
 
@@ -32,6 +37,16 @@ const LogoItem = styled.div`
   padding: 0 1.5rem;
   flex-shrink: 0;
   font-size: 3rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0.8rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const technologies = [
@@ -73,27 +88,56 @@ const technologies = [
 ];
 
 const TechLogoMarquee: React.FC = () => {
-  // Duplicate technologies for infinite loop effect
   const duplicatedTechnologies = [...technologies, ...technologies];
 
   const marqueeVariants = {
     animate: {
-      x: ['0%', '-50%'], // Move from 0% to -50% of the total width
+      x: ['0%', '-50%'],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: 'loop',
-          duration: 40, // Adjusted duration for potentially wider logos
+          duration: 40,
           ease: 'linear',
         },
       },
     },
   };
 
+  // Adjust animation duration based on screen size
+  const getAnimationDuration = () => {
+    if (window.innerWidth <= 480) return 30;
+    if (window.innerWidth <= 768) return 35;
+    return 40;
+  };
+
+  const [duration, setDuration] = React.useState(getAnimationDuration());
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setDuration(getAnimationDuration());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <MarqueeContainer>
       <MarqueeContent
-        variants={marqueeVariants}
+        variants={{
+          animate: {
+            x: ['0%', '-50%'],
+            transition: {
+              x: {
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration,
+                ease: 'linear',
+              },
+            },
+          },
+        }}
         animate="animate"
       >
         {duplicatedTechnologies.map((tech, index) => (
