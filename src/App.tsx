@@ -437,7 +437,7 @@ function App() {
         <FaChevronLeft />
       </BackButton>
 
-      {selectedPath !== 'none' && (
+      {selectedPath === 'webdev' && (
         <Header>
           <Logo>
             <span className="icon">👨‍💻</span>
@@ -454,7 +454,7 @@ function App() {
         </Header>
       )}
 
-      {selectedPath !== 'none' && (
+      {selectedPath === 'webdev' && (
         <MobileNav
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: isMobileMenuOpen ? 1 : 0, y: isMobileMenuOpen ? 0 : -20 }}
